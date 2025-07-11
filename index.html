@@ -378,7 +378,7 @@
             <h2>Mission Trip to Arusha • November 20-30, 2024</h2>
             <div class="mission-info">
                 <h3>Our Mission</h3>
-                <p>Join me in supporting a life-changing mission trip to Arusha, Tanzania! We'll be ministering to over 107,000 children and conducting projects at a local school. This includes painting classrooms, fixing desks, and other vital improvements to create a better learning environment.</p>
+                <p>We'll be ministering to over 107,000 children in Arusha, Tanzania and conducting projects at a local school (possibly painting classrooms, fixing desks, and other vital improvements to create a better learning environment).</p>
                 <p><strong>Your donation helps cover:</strong> Flights, accommodation, meals, project supplies, and materials for the children.</p>
                 <div style="background: #e8f4f8; padding: 15px; border-radius: 8px; margin-top: 15px; border-left: 4px solid #3498db;">
                     <p><strong>"Pick A Number"</strong> to represent the donation amount that you would like to give (you can choose multiple numbers to get the sum of your choice). Afterwards, scroll to the bottom to select payment option and press "Submit Donation".</p>
@@ -442,10 +442,10 @@
             
             <div class="payment-methods" id="paymentMethods">
                 <div class="payment-btn" onclick="selectPayment('venmo')">
-                    💜 Venmo<br>@Johanna-Jones-23
+                    💜 <a href="https://venmo.com/u/Johanna-Jones-23" target="_blank" style="color: inherit; text-decoration: none;">Venmo</a>
                 </div>
-                <div class="payment-btn" onclick="selectPayment('cashapp')">
-                    💚 CashApp<br>$JohannaAdoni
+                <div class="payment-btn" onclick="openCashApp('https://cash.app/$JohannaAdoni')">
+                    💚 CashApp
                 </div>
                 <div class="payment-btn" onclick="selectPayment('zelle')">
                     🟡 Zelle<br>512-585-2150
@@ -600,6 +600,12 @@
             document.querySelectorAll('.payment-btn').forEach(btn => btn.classList.remove('selected'));
             event.target.classList.add('selected');
             updateDonationSummary();
+        }
+
+        // Open CashApp
+        function openCashApp(url) {
+            window.open(url, '_blank');
+            selectPayment('cashapp');
         }
 
         // Process donation
